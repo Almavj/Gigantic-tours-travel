@@ -8,7 +8,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Newsletter from '../../components/Newsletter';
 import Packages from '../../components/Packages';
-import DestinationCard from '../../components/DestinationCard';
+import DestinationCard from '../../components/DestinationCard'; // Keep this import
 
 export default function DestinationsPage() {
   const allDestinations = getAllDestinations();
@@ -66,54 +66,5 @@ export default function DestinationsPage() {
 
       <Footer />
     </>
-  );
-}
-
-function DestinationCard({ destination }) {
-  return (
-    <div className="group relative bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-      <div className="relative h-48">
-        <Image
-          src={destination.images[0]}
-          alt={destination.name}
-          fill
-          className="object-cover transition-opacity duration-300 group-hover:opacity-90"
-          quality={80}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent" />
-        <div className="absolute bottom-4 left-4 right-4">
-          <h3 className="text-xl font-bold text-white">{destination.name}</h3>
-          <div className="flex items-center text-white/90">
-            <FiMapPin className="flex-shrink-0 mr-1" />
-            <span className="text-sm truncate">
-              {destination.location.address || `${destination.location.city}, ${destination.location.country}`}
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="p-4">
-        <div className="flex justify-between items-start">
-          <div className="flex items-center">
-            <StarIcon className="w-5 h-5 text-yellow-400" />
-            <span className="ml-1 font-medium text-gray-900">{destination.rating}</span>
-            <span className="mx-2 text-gray-300">•</span>
-            <span className="text-gray-600">{destination.reviewCount} reviews</span>
-          </div>
-          <div className="text-right">
-            <div className="text-lg font-bold text-blue-600">
-              ${destination.price.toLocaleString()}
-            </div>
-            <div className="text-xs text-gray-500">per person</div>
-          </div>
-        </div>
-        <p className="mt-3 text-gray-600 line-clamp-2">{destination.description}</p>
-        <Link
-          href={`/destinations/${destination.slug}`}
-          className="mt-4 inline-block w-full text-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-        >
-          View Details
-        </Link>
-      </div>
-    </div>
   );
 }

@@ -5,7 +5,7 @@ import {
   Star, DollarSign, Calendar, ChevronRight,
   Sparkles, Target, Clock, Users
 } from 'lucide-react';
-import { destinations } from '../data/destinations'; // Changed to 'destinations' as per the TSX file
+import { alldestinations } from '../data/destinations'; // Changed to 'destinations' as per the TSX file
 
 const AITravelQuiz = ({ isOpen, onClose }) => {
   const [quizStep, setQuizStep] = useState(0);

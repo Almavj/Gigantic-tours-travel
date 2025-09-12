@@ -2,7 +2,7 @@
 import { kenyanDestinations } from './kenya';
 import { internationalDestinations } from './international';
 import { seasonalDestinations } from './seasonal';
-export { destinations };
+
 // Export individual collections
 export { kenyanDestinations, internationalDestinations, seasonalDestinations };
 
@@ -43,7 +43,7 @@ export const featuredDestinations = allDestinations.filter(dest =>
   FEATURED_DESTINATION_SLUGS.includes(dest.slug)
 );
 
-export const seasonalFeatured = allDestinations.filter(dest => 
+export const  seasonalFeatured = allDestinations.filter(dest => 
   SEASONAL_FEATURED_SLUGS.includes(dest.slug)
 );
 
