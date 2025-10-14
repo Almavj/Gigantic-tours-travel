@@ -148,9 +148,10 @@ const Navbar = () => {
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center group">
+              <img src="/logos/GTT-LOGO.png" alt="Gigantic Tours & Travel Logo" className="h-10 w-auto object-contain mr-2 transition-transform group-hover:scale-105" style={{maxWidth:'48px'}} />
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                TravelEase
+                Gigantic Tours & Travel
               </span>
             </Link>
           </div>

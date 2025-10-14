@@ -41,7 +41,7 @@ export default function Contact() {
     <div className="min-h-screen bg-white">
       <Head>
         <title>Contact Us - gigantictourstravels</title>
-        <meta name="description" content="Get in touch with TravelEase for your travel inquiries" />
+        <meta name="description" content="Get in touch with Giganti Tours & Travels for your travel inquiries" />
       </Head>
 
       <Navbar />

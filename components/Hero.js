@@ -4,7 +4,6 @@ import { Sparkles, Play } from 'lucide-react';
 import Button from './common/Button';
 import Card from './common/Card';
 import AITravelQuiz from './AITravelQuiz';
-import DealsTicker from '../components/DealsTicker'; // Correct import path
 
 const Hero = () => {
   const [showQuiz, setShowQuiz] = useState(false);
@@ -48,8 +47,6 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Deals Ticker is now correctly placed inside the Hero component */}
-      <DealsTicker />
 
       {/* Animated Background Images */}
       <div className="absolute inset-0">

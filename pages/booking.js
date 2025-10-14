@@ -46,7 +46,7 @@ export default function BookingPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Head>
-        <title>Book {name} | Travel Explorer</title>
+        <title>{`Book ${name} | Travel Explorer`}</title>
       </Head>
       <Navbar />
       <main className="flex-grow bg-gray-50 py-12">

@@ -1,11 +1,34 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Beautiful gradient backgrounds */
 body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
+  @apply font-body text-night bg-gradient-to-br from-primary via-secondary to-accent min-h-screen;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display text-primary;
+}
+
+a {
+  @apply text-primary hover:text-accent transition-colors;
+}
+
+button, .btn {
+  @apply bg-primary text-white font-display rounded-lg shadow-lg px-6 py-2 hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 transition-all;
+}
+
+section {
+  @apply rounded-2xl shadow-xl bg-white/80 backdrop-blur-md p-6 mb-8;
+}
+
+/* Add a subtle card effect for destination cards */
+.destination-card, .glass, .glass-strong {
+  @apply rounded-xl shadow-lg border border-night/10;
 }
 /* Add this to styles/globals.css if missing */
 .animate-marquee {
@@ -18,46 +41,13 @@ body {
   100% { transform: translateX(-100%); }
 }
 
-/* Custom beautiful gradients */
-.gradient-bg-1 {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
 
-.gradient-bg-2 {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-}
-
-.gradient-bg-3 {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-}
-
-.gradient-bg-4 {
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-}
-
-.gradient-bg-5 {
-  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-}
-
-.gradient-bg-6 {
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-}
-
-.gradient-bg-7 {
-  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-}
-
-.gradient-bg-8 {
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-}
-
-.gradient-bg-9 {
-  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
-}
-
-.gradient-bg-10 {
-  background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);
-}
+/* Updated gradients for travel vibes */
+.gradient-bg-1 { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+.gradient-bg-2 { background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%); }
+.gradient-bg-3 { background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%); }
+.gradient-bg-4 { background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); }
+.gradient-bg-5 { background: linear-gradient(135deg, #232526 0%, #414345 100%); }
 
 /* Animated hero background */
 .hero-animated-bg {

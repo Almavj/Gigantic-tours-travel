@@ -5,7 +5,7 @@ import {
   Star, DollarSign, Calendar, ChevronRight,
   Sparkles, Target, Clock, Users
 } from 'lucide-react';
-import { alldestinations } from '../data/destinations'; // Changed to 'destinations' as per the TSX file
+import { allDestinations } from '../data/destinations';
 
 const AITravelQuiz = ({ isOpen, onClose }) => {
   const [quizStep, setQuizStep] = useState(0);
@@ -101,21 +101,40 @@ const AITravelQuiz = ({ isOpen, onClose }) => {
   }, [isOpen, floatingElements.length]);
 
   const getRecommendations = () => {
-    let results = [...destinations]; // Using 'destinations' as per the TSX file
+    let results = [...allDestinations];
 
-    // Filter based on quiz answers
+    // Filter based on quiz answers - TYPE
     if (quizAnswers.type) {
       if (quizAnswers.type === 'Adventure') {
-        results = results.filter(d => d.type === 'wildlife' || d.type === 'mountain' || d.type === 'bush');
+        results = results.filter(d => 
+          d.category?.includes('adventure') || 
+          d.category?.includes('wildlife') ||
+          d.category?.includes('safari') ||
+          d.tags?.some(tag => ['wildlife', 'mountain', 'adventure'].includes(tag))
+        );
       } else if (quizAnswers.type === 'Relaxation') {
-        results = results.filter(d => d.type === 'coastal' || d.type === 'city');
+        results = results.filter(d => 
+          d.category?.includes('beach') || 
+          d.category?.includes('relaxation') ||
+          d.category?.includes('coastal') ||
+          d.tags?.some(tag => ['beach', 'coast', 'relaxation', 'marine'].includes(tag))
+        );
       } else if (quizAnswers.type === 'Cultural') {
-        results = results.filter(d => d.type === 'cultural' || d.category === 'kenya');
+        results = results.filter(d => 
+          d.category?.includes('cultural') || 
+          d.category?.includes('historical') ||
+          d.tags?.some(tag => ['cultural', 'heritage', 'swahili-culture', 'historical'].includes(tag))
+        );
       } else if (quizAnswers.type === 'Luxury') {
-        results = results.filter(d => d.price > 3000);
+        results = results.filter(d => 
+          d.price > 3000 || 
+          d.tags?.includes('luxury') ||
+          d.category?.includes('luxury')
+        );
       }
     }
 
+    // Budget filtering
     if (quizAnswers.budget) {
       const budgetRanges = {
         '$500-$1000': [500, 1000],
@@ -128,20 +147,56 @@ const AITravelQuiz = ({ isOpen, onClose }) => {
       results = results.filter(d => d.price >= min && d.price <= max);
     }
 
-    // Score destinations based on interests
+    // ENHANCED: Improved interests filtering for your data structure
     if (quizAnswers.interests?.length > 0) {
       results = results.map(dest => {
         let score = 0;
         quizAnswers.interests.forEach((interest) => {
-          if (dest.highlights.some(h => h.toLowerCase().includes(interest.toLowerCase()))) {
+          const interestLower = interest.toLowerCase();
+          // High priority: Check category array
+          if (dest.category?.some(cat => cat.toLowerCase().includes(interestLower))) {
+            score += 3;
+          }
+          // High priority: Check tags array
+          if (dest.tags?.some(tag => tag.toLowerCase().includes(interestLower))) {
+            score += 3;
+          }
+          // Medium priority: Check highlights array
+          if (dest.highlights?.some(highlight => highlight.toLowerCase().includes(interestLower))) {
+            score += 2;
+          }
+          // Medium priority: Check description
+          if (dest.description?.toLowerCase().includes(interestLower) ||
+              dest.detailedDescription?.toLowerCase().includes(interestLower)) {
             score += 1;
+          }
+          // Low priority: Check name
+          if (dest.name?.toLowerCase().includes(interestLower)) {
+            score += 1;
+          }
+          // SPECIAL CASE: Beach interests should strongly match beach destinations
+          if (interestLower === 'beaches') {
+            if (dest.category?.includes('beach') || 
+                dest.tags?.some(tag => ['beach', 'coast', 'marine'].includes(tag)) ||
+                dest.name?.toLowerCase().includes('beach')) {
+              score += 5; // Very high weight for beach destinations
+            }
           }
         });
         return { ...dest, personalizedScore: score };
-      }).sort((a, b) => (b.personalizedScore || 0) - (a.personalizedScore || 0));
+      })
+      .filter(dest => dest.personalizedScore > 0)
+      .sort((a, b) => (b.personalizedScore || 0) - (a.personalizedScore || 0));
     }
 
-    setRecommendations(results.slice(0, 3));
+    // If no results after filtering, return popular destinations
+    if (results.length === 0) {
+      results = allDestinations
+        .filter(d => d.rating >= 4.5)
+        .slice(0, 6);
+    }
+
+    setRecommendations(results.slice(0, 6));
   };
 
   const resetQuiz = () => {
@@ -156,8 +211,14 @@ const AITravelQuiz = ({ isOpen, onClose }) => {
   };
 
   const handleDestinationClick = (id) => {
+    // Find the destination by id to get the slug
+    const dest = allDestinations.find(d => d.id === id);
     handleClose();
-    window.location.href = `/destination/${id}`;
+    if (dest && dest.slug) {
+      window.location.href = `/destinations/${dest.slug}`;
+    } else {
+      window.location.href = '/destinations';
+    }
   };
 
   // The TSX file calls getRecommendations when moving to quizStep 4,
@@ -558,7 +619,7 @@ const AITravelQuiz = ({ isOpen, onClose }) => {
                               <div className="flex justify-between items-center">
                                 <div className="flex items-center text-sm text-white/70">
                                   <MapPin className="mr-1 w-4 h-4" />
-                                  {rec.location}
+                                  {typeof rec.location === 'object' && rec.location.address ? rec.location.address : rec.location}
                                 </div>
                                 <span className="inline-flex items-center text-orange-400 font-medium group-hover:underline">
                                   View details <ChevronRight className="ml-1 w-4 h-4" />
@@ -572,7 +633,7 @@ const AITravelQuiz = ({ isOpen, onClose }) => {
                       <div className="text-center py-8">
                         <p className="text-white/70 mb-4">We're showing popular destinations that might inspire you:</p>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                          {destinations.slice(0, 3).map(dest => ( // Using 'destinations' as per the TSX file
+                          {allDestinations.slice(0, 3).map(dest => (
                             <div
                               key={dest.id}
                               className="block group cursor-pointer"

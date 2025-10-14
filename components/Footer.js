@@ -13,7 +13,7 @@ const Footer = ({ navItems = [] }) => {
   const socialPlatforms = [
     { name: 'Facebook', url: 'https://facebook.com' },
     { name: 'Twitter', url: 'https://twitter.com' },
-    { name: 'Instagram', url: 'https://instagram.com' },
+    { name: 'Instagram', url: 'https://www.instagram.com/p/C-4oDbhNNpk/?igsh=ZDFoeTIyN2YxdGRv' },
     { name: 'LinkedIn', url: 'https://linkedin.com' }
   ];
 
@@ -78,9 +78,10 @@ const Footer = ({ navItems = [] }) => {
         </div>
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <Link href="/" className="text-2xl font-bold text-white">
-              Gigantic Tours & Travel
+          <div className="mb-4 md:mb-0 flex items-center space-x-3">
+            <Link href="/" className="flex items-center space-x-2 group">
+              <img src="/images/hero/GTT-LOGO.png" alt="Gigantic Tours & Travel Logo" className="h-8 w-auto object-contain transition-transform group-hover:scale-105" style={{maxWidth:'40px'}} />
+              <span className="text-2xl font-bold text-white">Gigantic Tours & Travel</span>
             </Link>
           </div>
           <div className="text-gray-400 text-sm">

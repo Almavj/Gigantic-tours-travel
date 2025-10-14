@@ -380,7 +380,7 @@ export default function DestinationPage({ destination, relatedDestinations = [] 
   return (
     <>
       <Head>
-        <title>{destination.name} | Travel Explorer</title>
+        <title>{`${destination.name} | Travel Explorer`}</title>
         <meta name="description" content={destination.description} />
         <meta property="og:title" content={`${destination.name} | Travel Explorer`} />
         <meta property="og:description" content={destination.description} />

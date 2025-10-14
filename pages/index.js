@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import AITravelQuiz from '../components/AITravelQuiz';
-import Packages from '../components/Packages';
-import Testimonials from '../components/Testimonials';
-import Newsletter from '../components/Newsletter';
-import Footer from '../components/Footer';
-import Modal from '../components/Modal';
-import BookingForm from '../components/BookingForm';
-import TrustBadges from '../components/TrustBadges';
-import TravelStyles from '../components/TravelStyles';
-import DestinationCard from '../components/DestinationCard';
-import DealsTicker from '../components/DealsTicker'; // Ensure this import is correct
+import dynamic from 'next/dynamic';
+const Navbar = dynamic(() => import('../components/Navbar'));
+const Hero = dynamic(() => import('../components/Hero'));
+const AITravelQuiz = dynamic(() => import('../components/AITravelQuiz'));
+const Packages = dynamic(() => import('../components/Packages'));
+const Testimonials = dynamic(() => import('../components/Testimonials'));
+const Newsletter = dynamic(() => import('../components/Newsletter'));
+const Footer = dynamic(() => import('../components/Footer'));
+const Modal = dynamic(() => import('../components/Modal'));
+const BookingForm = dynamic(() => import('../components/BookingForm'));
+const TrustBadges = dynamic(() => import('../components/TrustBadges'));
+const TravelStyles = dynamic(() => import('../components/TravelStyles'));
+const DestinationCard = dynamic(() => import('../components/DestinationCard'));
+const DealsTicker = dynamic(() => import('../components/DealsTicker'));
 import { homeDestinations, kenyanDestinations, seasonalDestinations } from '../data/destinations';
 
 const HomePage = () => {

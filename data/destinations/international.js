@@ -586,13 +586,13 @@ export const internationalDestinations = [
 {
   id: "sa1",
   name: "Cape Town, South Africa",
-  image: "/images/south-africa/cape-town-table-mountain.webp",
-  fallbackImage: "/images/south-africa/cape-town-beach.webp",
+  image: "/images/international/cape-town-table-mountain.webp",
+  fallbackImage: "/images/international/cape-town-beach.webp",
   images: [
-    "/images/south-africa/cape-town-table-mountain.webp",
-    "/images/south-africa/cape-town-beach.webp",
-    "/images/south-africa/cape-town-waterfront.webp",
-    "/images/south-africa/cape-town-penguins.webp"
+    "/images/international/cape-town-table-mountain.webp",
+    "/images/international/cape-town-beach.webp",
+    "/images/international/cape-town-waterfront.webp",
+    "/images/international/cape-town-penguins.webp"
   ],
   price: 1750,
   duration: "7 days",
@@ -636,7 +636,7 @@ export const internationalDestinations = [
     {
       id: "sa1-a1",
       name: "Table Mountain",
-      image: "/images/south-africa/table-mountain.webp",
+      image: "/images/international/table-mountain.webp",
       description: "Iconic flat-topped mountain offering panoramic views of Cape Town.",
       tours: [
         {
@@ -655,7 +655,7 @@ export const internationalDestinations = [
     {
       id: "sa1-a2",
       name: "Boulders Beach Penguins",
-      image: "/images/south-africa/boulders-beach.webp",
+      image: "/images/international/boulders-beach.webp",
       description: "Protected beach with a colony of endangered African penguins.",
       tours: [
         {

@@ -9,7 +9,7 @@ export default function About() {
       id: 1,
       name: 'Victory Wanjiku',
       role: 'Founder & CEO',
-      bio: 'With over 15 years in the travel industry, Alex founded TravelEase to share his passion for authentic travel experiences.',
+      bio: 'With over 15 years in the travel industry, Alex founded Giganti TOurs & Travels to share his passion for authentic travel experiences.',
       image: '/images/image1.jpeg'
     },
     {
@@ -79,7 +79,7 @@ export default function About() {
     <div className="min-h-screen bg-white">
       <Head>
         <title>About Us - gigantictourstravels</title>
-        <meta name="description" content="Learn about TravelEase and our mission" />
+        <meta name="description" content="Learn about Gigantic Tours & Travels and our mission" />
       </Head>
 
       <Navbar />
@@ -100,7 +100,7 @@ export default function About() {
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Story</h2>
             <p className="text-gray-600 mb-4">
-              Founded in 2020, TravelEase began as a small team of travel enthusiasts with a big dream: to make world-class travel experiences accessible to everyone.
+              Founded in 2020,  began as a small team of travel enthusiasts with a big dream: to make world-class travel experiences accessible to everyone.
             </p>
             <p className="text-gray-600 mb-4">
               What started as a local tour operator has grown into an internationally recognized travel company, serving thousands of happy customers across six continents.
@@ -130,7 +130,7 @@ export default function About() {
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
             <p className="text-gray-600 mb-4">
-              At TravelEase, we believe that travel has the power to transform lives, broaden perspectives, and create lasting memories.
+              At Gigantic Tours & Travel, we believe that travel has the power to transform lives, broaden perspectives, and create lasting memories.
             </p>
             <p className="text-gray-600 mb-4">
               Our mission is to craft exceptional travel experiences that go beyond the ordinary, connecting people with the world's most incredible destinations in meaningful ways.
@@ -193,7 +193,7 @@ export default function About() {
 
         {/* Why Choose Us Section */}
         <div className="bg-blue-700 rounded-xl p-8 text-white mb-16">
-          <h2 className="text-3xl font-bold mb-6">Why Choose TravelEase?</h2>
+          <h2 className="text-3xl font-bold mb-6">Why Choose Gigantic Travels?</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <ul className="space-y-4">
