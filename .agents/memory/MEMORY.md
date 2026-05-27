@@ -1,0 +1,1 @@
+- [Gigantic Tours migration](gigantic-tours.md) — key decisions for the Next.js → React/Vite migration
