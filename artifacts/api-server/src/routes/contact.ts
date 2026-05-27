@@ -1,8 +1,8 @@
-import { Router, type IRouter } from "express";
+import { Router, type IRouter, type Request, type Response } from "express";
 
 const router: IRouter = Router();
 
-router.post("/contact", async (req, res) => {
+router.post("/contact", async (req: Request, res: Response) => {
   const { name, email, phone, subject, message } = req.body as {
     name?: string;
     email?: string;

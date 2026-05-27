@@ -1,8 +1,8 @@
-import { Router, type IRouter } from "express";
+import { Router, type IRouter, type Request, type Response } from "express";
 
 const router: IRouter = Router();
 
-router.post("/subscribe", async (req, res) => {
+router.post("/subscribe", async (req: Request, res: Response) => {
   const { email } = req.body as { email?: string };
 
   if (!email || !email.includes("@")) {
