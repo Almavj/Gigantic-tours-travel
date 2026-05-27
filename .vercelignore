@@ -1,0 +1,7 @@
+artifacts/api-server
+artifacts/mockup-sandbox
+lib
+scripts
+.migration-backup
+.git
+.replit
