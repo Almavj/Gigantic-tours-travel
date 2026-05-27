@@ -1,5 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -140,10 +139,7 @@ section {
   background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
 }
 
-/* Smooth transitions */
-* {
-  transition: all 0.3s ease-in-out;
-}
+
 
 /* Text selection */
 ::selection {

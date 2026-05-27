@@ -26,7 +26,7 @@ const nextConfig = {
   },
 
   // Fix the cross-origin warning you're seeing
-  allowedDevOrigins: ['192.168.8.64', 'localhost', '127.0.0.1'],
+  allowedDevOrigins: ['192.168.8.64', '172.22.28.160', 'localhost', '127.0.0.1'],
 
   // Environment variables (optional)
   env: {
@@ -71,9 +71,6 @@ const nextConfig = {
     
     // Enable if you need server actions
     // serverActions: true,
-    
-    // Optimizations
-    optimizeCss: true,
     
     // For better performance
     scrollRestoration: true,
