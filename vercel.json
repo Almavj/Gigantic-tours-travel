@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm run build",
+  "buildCommand": "NODE_ENV=production pnpm run build",
   "installCommand": "pnpm install",
   "outputDirectory": "artifacts/gigantic-tours/dist/public"
 }
