@@ -13,16 +13,22 @@ const DealsTicker = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white py-2.5 overflow-hidden relative z-40">
+    <div
+      className="sticky top-20 z-40 overflow-hidden"
+      style={{ background: 'linear-gradient(90deg, #f97316 0%, #ef4444 50%, #f97316 100%)' }}
+    >
       <div className="flex items-center">
-        <div className="flex items-center gap-2 px-5 whitespace-nowrap bg-black/20 mr-4 py-2.5 -my-2.5">
-          <Zap className="h-4 w-4 fill-white" />
-          <span className="font-black text-sm tracking-wide">HOT DEALS</span>
-          <Tag className="h-3.5 w-3.5" />
+        <div
+          className="flex items-center gap-2 px-5 whitespace-nowrap py-2.5 flex-shrink-0"
+          style={{ background: 'rgba(0,0,0,0.25)' }}
+        >
+          <Zap className="h-4 w-4 fill-white text-white" />
+          <span className="font-black text-sm tracking-wide text-white">HOT DEALS</span>
+          <Tag className="h-3.5 w-3.5 text-white" />
         </div>
-        <div className="animate-marquee flex flex-shrink-0">
+        <div className="animate-marquee flex flex-shrink-0 py-2.5">
           {[...deals, ...deals].map((deal, index) => (
-            <span key={index} className="mx-10 whitespace-nowrap text-sm font-semibold">
+            <span key={index} className="mx-10 whitespace-nowrap text-sm font-semibold text-white">
               {deal}
             </span>
           ))}

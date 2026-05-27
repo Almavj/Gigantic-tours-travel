@@ -126,10 +126,10 @@ const Navbar = () => {
               <Globe className="w-5 h-5 text-white" />
             </div>
             <div>
-              <span className={`text-xl font-black tracking-tight transition-colors ${scrolled ? 'text-gray-900' : 'text-white'}`} style={{ fontFamily: 'Poppins, sans-serif' }}>
+              <span className={`text-xl font-black tracking-tight transition-colors ${isScrolled ? 'text-gray-900' : 'text-white'}`} style={{ fontFamily: 'Poppins, sans-serif' }}>
                 Gigantic Tours
               </span>
-              <div className={`text-xs font-medium transition-colors ${scrolled ? 'text-blue-600' : 'text-amber-400'}`}>
+              <div className={`text-xs font-medium transition-colors ${isScrolled ? 'text-blue-600' : 'text-amber-400'}`}>
                 & Travel
               </div>
             </div>
@@ -219,7 +219,7 @@ const Navbar = () => {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'}`}
+            className={`md:hidden p-2 rounded-lg transition-colors ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'}`}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
