@@ -1,202 +1,170 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Play } from 'lucide-react';
-import Button from './common/Button';
-import Card from './common/Card';
-import AITravelQuiz from './AITravelQuiz';
+import { Link } from 'wouter';
+import { ChevronDown, MapPin, Star, Users, Award } from 'lucide-react';
 
 interface HeroImage {
   src: string;
   title: string;
   subtitle: string;
+  location: string;
 }
 
 interface HeroProps {
   onQuizOpen?: () => void;
 }
 
-const Hero = ({ onQuizOpen }: HeroProps) => {
-  const [showQuiz, setShowQuiz] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+const heroImages: HeroImage[] = [
+  {
+    src: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1920&q=90',
+    title: 'Witness the Great Migration',
+    subtitle: 'Maasai Mara, Kenya',
+    location: 'Kenya, East Africa'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=1920&q=90',
+    title: 'Paradise Found',
+    subtitle: 'Diani Beach, Kenya',
+    location: 'Indian Ocean Coast'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=1920&q=90',
+    title: 'Sunsets in Santorini',
+    subtitle: 'Greek Island Magic',
+    location: 'Santorini, Greece'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=90',
+    title: 'Giants of Amboseli',
+    subtitle: 'Elephants & Kilimanjaro',
+    location: 'Amboseli, Kenya'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1920&q=90',
+    title: 'Ancient Kyoto',
+    subtitle: 'Tradition Meets Serenity',
+    location: 'Kyoto, Japan'
+  }
+];
 
-  const heroImages: HeroImage[] = [
-    {
-      src: '/images/kenya/maasai-man.webp',
-      title: 'Maasai Mara Safari',
-      subtitle: 'Witness the Great Migration'
-    },
-    {
-      src: '/images/kenya/diani.webp',
-      title: 'Diani Beach Paradise',
-      subtitle: 'Crystal Clear Waters'
-    },
-    {
-      src: '/images/international/santorini.webp',
-      title: 'Santorini Sunsets',
-      subtitle: 'Greek Island Magic'
-    },
-    {
-      src: '/images/kenya/mount-kenya.webp',
-      title: 'Mount Kenya Adventure',
-      subtitle: 'Conquer New Heights'
-    },
-    {
-      src: '/images/international/kyoto.webp',
-      title: 'Kyoto Cultural Journey',
-      subtitle: 'Ancient Traditions'
-    }
-  ];
+const Hero = ({ onQuizOpen }: HeroProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
-
+      setCurrentIndex(prev => (prev + 1) % heroImages.length);
+    }, 6000);
     return () => clearInterval(interval);
-  }, [heroImages.length]);
+  }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      <div className="absolute inset-0">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentImageIndex}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("${heroImages[currentImageIndex].src}")`
-            }}
+    <div className="relative h-screen min-h-[700px] overflow-hidden">
+      <AnimatePresence mode="sync">
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0, scale: 1.08 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="absolute inset-0"
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url("${heroImages[currentIndex].src}")` }}
           />
-        </AnimatePresence>
-      </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
+        </motion.div>
+      </AnimatePresence>
 
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="relative z-10 flex flex-col justify-end h-full pb-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
         <motion.div
-          animate={{ y: [0, -20, 0], rotate: [0, 5, -5, 0] }}
-          transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-xl"
-        />
-        <motion.div
-          animate={{ y: [0, 30, 0], x: [0, 15, 0] }}
-          transition={{ duration: 12, repeat: Infinity }}
-          className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-orange-400/20 to-pink-600/20 rounded-full blur-xl"
-        />
-      </div>
+          key={`text-${currentIndex}`}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
+          className="mb-8"
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <MapPin className="w-4 h-4 text-amber-400" />
+            <span className="text-amber-400 text-sm font-semibold tracking-widest uppercase">
+              {heroImages[currentIndex].location}
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none mb-4 tracking-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            {heroImages[currentIndex].title}
+          </h1>
+          <p className="text-2xl md:text-3xl text-white/80 font-light mb-10">
+            {heroImages[currentIndex].subtitle}
+          </p>
 
-      <div className="relative z-10 flex items-center justify-center min-h-screen pt-20 px-4">
-        <div className="text-center text-white max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="mb-8"
-          >
-            <h1 className="text-5xl md:text-8xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-                Discover Your Next
-              </span>
-              <br />
-              <motion.span
-                className="text-orange-400 block"
-                animate={{
-                  textShadow: [
-                    "0 0 20px rgba(251, 146, 60, 0.5)",
-                    "0 0 40px rgba(251, 146, 60, 0.8)",
-                    "0 0 20px rgba(251, 146, 60, 0.5)"
-                  ]
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                Adventure
-              </motion.span>
-            </h1>
-          </motion.div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/destinations"
+              className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-amber-500 hover:bg-amber-400 text-gray-900 font-bold text-lg rounded-full transition-all duration-300 shadow-2xl hover:shadow-amber-500/30 hover:scale-105"
+            >
+              Explore Destinations
+              <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform rotate-[-90deg]" />
+            </Link>
+            <button
+              onClick={onQuizOpen}
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold text-lg rounded-full border border-white/30 transition-all duration-300 hover:scale-105"
+            >
+              ✨ Find My Perfect Trip
+            </button>
+          </div>
+        </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="text-xl md:text-3xl mb-12 opacity-90 leading-relaxed max-w-4xl mx-auto"
-          >
-            From Kenya's stunning landscapes to international destinations,
-            create memories that last a lifetime with our expertly curated travel experiences
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="max-w-2xl mx-auto mb-12"
-          >
-            <Card className="glass-strong p-8 text-center bg-white/10 border-white/20">
-              <div className="flex items-center justify-center mb-6">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-full mr-4"
-                >
-                  <Sparkles className="h-8 w-8 text-white" />
-                </motion.div>
-                <div className="text-left">
-                  <h3 className="text-2xl font-bold text-white mb-2">AI Travel Quiz</h3>
-                  <p className="text-blue-100">Find your perfect destination in 60 seconds</p>
-                </div>
-              </div>
-
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  onClick={() => onQuizOpen ? onQuizOpen() : setShowQuiz(true)}
-                  variant="primary"
-                  size="lg"
-                  className="w-full pulse-glow text-xl py-4"
-                  icon={Play}
-                >
-                  Start Your Journey
-                </Button>
-              </motion.div>
-
-              <p className="text-blue-100 text-sm mt-4 opacity-80">
-                ✨ Powered by AI • Personalized recommendations • Instant results
-              </p>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="flex justify-center space-x-3 mb-8"
-          >
-            {heroImages.map((_, index) => (
-              <motion.button
-                key={index}
-                onClick={() => setCurrentImageIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentImageIndex ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/75'
+        <div className="flex items-center justify-between">
+          <div className="flex gap-2">
+            {heroImages.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentIndex(i)}
+                className={`transition-all duration-500 rounded-full ${
+                  i === currentIndex
+                    ? 'w-10 h-2 bg-amber-400'
+                    : 'w-2 h-2 bg-white/40 hover:bg-white/60'
                 }`}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
               />
             ))}
-          </motion.div>
+          </div>
 
-          <motion.div
-            key={currentImageIndex}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h3 className="text-2xl font-bold mb-2">{heroImages[currentImageIndex].title}</h3>
-            <p className="text-blue-200 text-lg">{heroImages[currentImageIndex].subtitle}</p>
-          </motion.div>
+          <div className="hidden md:flex items-center gap-8 text-white">
+            <div className="flex items-center gap-2">
+              <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
+              <div>
+                <div className="text-lg font-bold">4.9/5</div>
+                <div className="text-xs text-white/60">Avg Rating</div>
+              </div>
+            </div>
+            <div className="w-px h-10 bg-white/20" />
+            <div className="flex items-center gap-2">
+              <Users className="w-5 h-5 text-amber-400" />
+              <div>
+                <div className="text-lg font-bold">10,000+</div>
+                <div className="text-xs text-white/60">Happy Travelers</div>
+              </div>
+            </div>
+            <div className="w-px h-10 bg-white/20" />
+            <div className="flex items-center gap-2">
+              <Award className="w-5 h-5 text-amber-400" />
+              <div>
+                <div className="text-lg font-bold">50+</div>
+                <div className="text-xs text-white/60">Destinations</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {!onQuizOpen && <AITravelQuiz isOpen={showQuiz} onClose={() => setShowQuiz(false)} />}
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 z-10"
+      >
+        <ChevronDown className="w-7 h-7" />
+      </motion.div>
     </div>
   );
 };

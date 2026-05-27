@@ -133,9 +133,9 @@ const AITravelQuiz = ({ isOpen, onClose }: AITravelQuizProps) => {
         >
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {[
-              { src: '/images/kenya/maasai-man.webp', style: { top: '15%', left: '5%', width: '140px', height: '120px' } },
-              { src: '/images/kenya/lamu.webp', style: { top: '70%', left: '80%', width: '200px', height: '120px' } },
-              { src: '/images/international/paris.webp', style: { bottom: '10%', left: '20%', width: '120px', height: '80px' } }
+              { src: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1200&q=80', style: { top: '15%', left: '5%', width: '140px', height: '120px' } },
+              { src: 'https://images.unsplash.com/photo-1552832618-fbf88ed7c1cf?w=1200&q=80', style: { top: '70%', left: '80%', width: '200px', height: '120px' } },
+              { src: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=80', style: { bottom: '10%', left: '20%', width: '120px', height: '80px' } }
             ].map((el, i) => (
               <motion.div
                 key={i}
@@ -363,10 +363,10 @@ const AITravelQuiz = ({ isOpen, onClose }: AITravelQuizProps) => {
                             >
                               <div className="relative h-32 overflow-hidden">
                                 <img
-                                  src={dest.images?.[0] || '/images/hero-fallback.webp'}
+                                  src={dest.images?.[0] || 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1200&q=80'}
                                   alt={dest.name}
                                   className="w-full h-full object-cover"
-                                  onError={e => { (e.target as HTMLImageElement).src = '/images/hero-fallback.webp'; }}
+                                  onError={e => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1200&q=80'; }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                                 <div className="absolute bottom-2 left-2 right-2">

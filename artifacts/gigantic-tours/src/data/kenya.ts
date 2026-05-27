@@ -3,11 +3,11 @@ import type { Destination } from '../types/destination';
 export const kenyanDestinations: Destination[] = [
 {
         name: 'Maasai Mara',
-    image: '/images/kenya/maasai-man.webp',
-    fallbackImage: '/images/kenya/maasai-man2.webp',
+    image: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1200&q=80',
+    fallbackImage: 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1200&q=80',
     images: [
-      '/images/kenya/maasai-man.webp',
-      '/images/kenya/maasai-man2.webp'
+      'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1200&q=80',
+      'https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1200&q=80'
     ],
     price: 1200,
     duration: '4 days',
@@ -44,7 +44,7 @@ export const kenyanDestinations: Destination[] = [
       {
         id: 'k1-a1',
         name: 'Mara River Crossing',
-        image: '/images/kenya/mara-river.webp',
+        image: 'https://images.unsplash.com/photo-1560981396-7947b2c06e90?w=1200&q=80',
         description: 'Witness the dramatic river crossings during the Great Migration.',
         tours: [
           {
@@ -82,13 +82,13 @@ export const kenyanDestinations: Destination[] = [
   {
     id: 'k2',
     name: 'Lake Naivasha',
-  image: '/images/kenya/naivasha.webp',
-  fallbackImage: '/images/kenya/naivasha2.webp',
+  image: 'https://images.unsplash.com/photo-1560981396-7947b2c06e90?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1560981396-7947b2c06e90?w=1200&q=80',
   images: [
-    '/images/kenya/naivasha-main.webp',
-    '/images/kenya/naivasha-boat.webp',
-    '/images/kenya/naivasha-hike.webp',
-    '/images/kenya/naivasha-birds.webp'
+    'https://images.unsplash.com/photo-1560981396-7947b2c06e90?w=1200&q=80',
+    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80',
+    'https://images.unsplash.com/photo-1551244072-5d12893278bc?w=1200&q=80',
+    'https://images.unsplash.com/photo-1444464666168-49d633b86797?w=1200&q=80'
   ],
   price: 850,
   duration: '3 days',
@@ -132,7 +132,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'k2-a1',
       name: 'Crescent Island Sanctuary',
-      image: '/images/kenya/crescent-island.webp',
+      image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80',
       description: 'A walking safari haven with zebras, giraffes, and antelopes in their natural setting.',
       tours: [
         {
@@ -151,7 +151,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'k2-a2',
       name: 'Hell\'s Gate National Park',
-      image: '/images/kenya/hells-gate.webp',
+      image: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=1200&q=80',
       description: 'Explore scenic gorges and volcanic landscapes on foot or by bike.',
       tours: [
         {
@@ -170,7 +170,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'k2-a3',
       name: 'Olkaria Geothermal Spa',
-      image: '/images/kenya/olkaria-spa.webp',
+      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80',
       description: 'A relaxing geothermal hot spring experience set in a unique volcanic landscape.',
       tours: [
         {
@@ -225,13 +225,13 @@ export const kenyanDestinations: Destination[] = [
 {
   id: 'i3',
   name: 'Amboseli National Park, Kenya',
-  image: '/images/kenya/amboseli.webp',
-  fallbackImage: '/images/kenya/amboseli2.webp',
+  image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1543436100-b899da17b6de?w=1200&q=80',
   images: [
-    '/images/kenya/amboseli.webp',
-    '/images/kenya/amboseli2.webp',
-    '/images/international/amboseli-sunset.webp',
-    '/images/international/amboseli-lodge.webp'
+    'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80',
+    'https://images.unsplash.com/photo-1543436100-b899da17b6de?w=1200&q=80',
+    'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80',
+    'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80'
   ],
   price: 1450,
   duration: '5 days',
@@ -275,7 +275,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'i3-a1',
       name: 'Observation Hill',
-      image: '/images/international/amboseli-observation-hill.webp',
+      image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80',
       description: 'Panoramic viewpoint perfect for watching elephants, hippos, and flamingos below.',
       tours: [
         {
@@ -294,7 +294,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'i3-a2',
       name: 'Maasai Cultural Village',
-      image: '/images/international/maasai-village.webp',
+      image: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1200&q=80',
       description: 'Authentic cultural exchange with the Maasai community.',
       tours: [
         {
@@ -350,12 +350,12 @@ export const kenyanDestinations: Destination[] = [
 {
   id: 'k3',
   name: 'Mount Kenya',
-  image: '/images/kenya/mount-kenya.webp',
-  fallbackImage: '/images/kenya/mount-kenya2.webp',
+  image: 'https://images.unsplash.com/photo-1577548373535-b33ee6afbfd7?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1551244072-5d12893278bc?w=1200&q=80',
   images: [
-    '/images/kenya/mount-kenya.webp',
-    '/images/kenya/mount-kenya2.webp',
-    '/images/kenya/mount-kenya-climb.webp'
+    'https://images.unsplash.com/photo-1577548373535-b33ee6afbfd7?w=1200&q=80',
+    'https://images.unsplash.com/photo-1551244072-5d12893278bc?w=1200&q=80',
+    'https://images.unsplash.com/photo-1577548373535-b33ee6afbfd7?w=1200&q=80'
   ],
   price: 1400,
   duration: '5 days',
@@ -399,7 +399,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'k3-a1',
       name: 'Point Lenana',
-      image: '/images/kenya/point-lenana.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'The third-highest peak of Mount Kenya, accessible to trekkers without technical climbing gear.',
       tours: [
         {
@@ -418,7 +418,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'k3-a2',
       name: 'Lake Michaelson',
-      image: '/images/kenya/lake-michaelson.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'A crater lake nestled in a high-altitude basin surrounded by cliffs—an iconic photo spot.',
       tours: [
         {
@@ -473,12 +473,12 @@ export const kenyanDestinations: Destination[] = [
 {
   id: 'k4',
   name: 'Diani Beach',
-  image: '/images/kenya/diani-beach.webp',
-  fallbackImage: '/images/kenya/diani-beach2.webp',
+  image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=1200&q=80',
   images: [
-    '/images/kenya/diani-beach.webp',
-    '/images/kenya/diani-beach2.webp',
-    '/images/kenya/diani-snorkeling.webp'
+    'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=1200&q=80',
+    'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=1200&q=80',
+    'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=1200&q=80'
   ],
   price: 900,
   duration: '3 days',
@@ -522,7 +522,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'k4-a1',
       name: 'Kisite-Mpunguti Marine Park',
-      image: '/images/kenya/kisite-mpunguti.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'A marine reserve teeming with dolphins, coral reefs, and tropical fish—perfect for snorkeling.',
       tours: [
         {
@@ -541,7 +541,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'k4-a2',
       name: 'Skydiving Over Diani',
-      image: '/images/kenya/diani-skydive.webp',
+      image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=1200&q=80',
       description: 'Enjoy a once-in-a-lifetime tandem skydiving experience with incredible views of the coastline.',
       tours: [
         {
@@ -596,12 +596,12 @@ export const kenyanDestinations: Destination[] = [
 {
   id: 'k5',
   name: 'Lewa Wildlife Conservancy',
-  image: '/images/kenya/lewa-conservancy.webp',
-  fallbackImage: '/images/kenya/lewa-conservancy2.webp',
+  image: 'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80',
   images: [
-    '/images/kenya/lewa-conservancy.webp',
-    '/images/kenya/lewa-conservancy2.webp',
-    '/images/kenya/lewa-wildlife.webp'
+    'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80',
+    'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80',
+    'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80'
   ],
   price: 1500,
   duration: '4 days',
@@ -645,7 +645,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'k5-a1',
       name: 'Rhino Sanctuary Experience',
-      image: '/images/kenya/lewa-rhinos.webp',
+      image: 'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80',
       description: 'Track black and white rhinos on foot or by vehicle with expert rangers.',
       tours: [
         {
@@ -664,7 +664,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'k5-a2',
       name: 'Grevy\'s Zebra Research Tour',
-      image: '/images/kenya/grevys-zebra.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'Meet the rarest zebra species and support research efforts on site.',
       tours: [
         {
@@ -719,13 +719,13 @@ export const kenyanDestinations: Destination[] = [
 {
   id: 'i4',
   name: 'Tsavo National Park, Kenya',
-  image: '/images/international/tsavo-elephants.webp',
-  fallbackImage: '/images/international/tsavo-savannah.webp',
+  image: 'https://images.unsplash.com/photo-1475776408506-9a5371e7a068?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1475776408506-9a5371e7a068?w=1200&q=80',
   images: [
-    '/images/international/tsavo-elephants.webp',
-    '/images/international/tsavo-savannah.webp',
-    '/images/international/tsavo-lava-landscape.webp',
-    '/images/international/tsavo-lions.webp'
+    'https://images.unsplash.com/photo-1475776408506-9a5371e7a068?w=1200&q=80',
+    'https://images.unsplash.com/photo-1475776408506-9a5371e7a068?w=1200&q=80',
+    'https://images.unsplash.com/photo-1475776408506-9a5371e7a068?w=1200&q=80',
+    'https://images.unsplash.com/photo-1475776408506-9a5371e7a068?w=1200&q=80'
   ],
   price: 1600,
   duration: '6 days',
@@ -769,7 +769,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'i4-a1',
       name: 'Mzima Springs',
-      image: '/images/international/mzima-springs.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'Crystal-clear pools teeming with hippos and crocodiles, fed by underground rivers from Kilimanjaro.',
       tours: [
         {
@@ -788,7 +788,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'i4-a2',
       name: 'Shetani Lava Flow',
-      image: '/images/international/shetani-lava.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'A massive black lava field that tells the story of a violent volcanic past.',
       tours: [
         {
@@ -843,13 +843,13 @@ export const kenyanDestinations: Destination[] = [
 {
   id: 'i5',
   name: 'Samburu National Reserve, Kenya',
-  image: '/images/international/samburu-elephants.webp',
-  fallbackImage: '/images/international/samburu-landscape.webp',
+  image: 'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80',
   images: [
-    '/images/international/samburu-elephants.webp',
-    '/images/international/samburu-warrior-dance.webp',
-    '/images/international/samburu-leopard.webp',
-    '/images/international/samburu-river.webp'
+    'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80',
+    'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80',
+    'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80',
+    'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80'
   ],
   price: 1550,
   duration: '5 days',
@@ -893,7 +893,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'i5-a1',
       name: 'Samburu Village Experience',
-      image: '/images/international/samburu-village.webp',
+      image: 'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=1200&q=80',
       description: 'Experience the traditional lifestyle, beadwork, and music of the Samburu people.',
       tours: [
         {
@@ -912,7 +912,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: 'i5-a2',
       name: 'Buffalo Springs Game Drive',
-      image: '/images/international/buffalo-springs.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'Visit the neighboring Buffalo Springs Reserve for more wildlife action and lush springs.',
       tours: [
         {
@@ -968,13 +968,13 @@ export const kenyanDestinations: Destination[] = [
   id: "i7",
   name: "Malindi, Kenya",
   slug: "malindi",
-  image: "/images/kenya/malindi.webp",
-  fallbackImage: "/images/kenya/malindi2.webp",
+  image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
+  fallbackImage: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
   images: [
-    "/images/kenya/malindi.webp",
-    "/images/kenya/malindi2.webp",
-    "/images/kenya/malindi-ruins.webp",
-    "/images/kenya/malindi-snorkeling.webp"
+    "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
+    "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
+    "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
+    "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80"
   ],
   price: 1180,
   duration: "4 days",
@@ -1016,7 +1016,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: "i7-a1",
       name: "Gede Ruins",
-      image: "/images/kenya/gede-ruins.webp",
+      image: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80",
       description: "Ancient Swahili village ruins hidden in a tropical forest.",
       tours: [
         {
@@ -1035,7 +1035,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: "i7-a2",
       name: "Malindi Marine National Park",
-      image: "/images/kenya/malindi-marine-park.webp",
+      image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
       description: "Protected marine area with vibrant coral reefs and crystal-clear waters.",
       tours: [
         {
@@ -1091,13 +1091,13 @@ export const kenyanDestinations: Destination[] = [
   id: "i8",
   name: "Lamu",
   slug: "lamu",
-  image: "/images/kenya/lamu.webp",
-  fallbackImage: "/images/kenya/lamu2.webp",
+  image: "https://images.unsplash.com/photo-1552832618-fbf88ed7c1cf?w=1200&q=80",
+  fallbackImage: "https://images.unsplash.com/photo-1552832618-fbf88ed7c1cf?w=1200&q=80",
   images: [
-    "/images/kenya/lamu.webp",
-    "/images/kenya/lamu-town.webp",
-    "/images/kenya/lamu-dhow.webp",
-    "/images/kenya/lamu-sunset.webp"
+    "https://images.unsplash.com/photo-1552832618-fbf88ed7c1cf?w=1200&q=80",
+    "https://images.unsplash.com/photo-1552832618-fbf88ed7c1cf?w=1200&q=80",
+    "https://images.unsplash.com/photo-1552832618-fbf88ed7c1cf?w=1200&q=80",
+    "https://images.unsplash.com/photo-1552832618-fbf88ed7c1cf?w=1200&q=80"
   ],
   price: 1300,
   duration: "4 days",
@@ -1139,7 +1139,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: "i8-a1",
       name: "Lamu Old Town Walking Tour",
-      image: "/images/kenya/lamu-old-town.webp",
+      image: "https://images.unsplash.com/photo-1552832618-fbf88ed7c1cf?w=1200&q=80",
       description: "Wander the ancient narrow streets lined with coral stone buildings and carved doors.",
       tours: [
         {
@@ -1158,7 +1158,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: "i8-a2",
       name: "Sunset Dhow Cruise",
-      image: "/images/kenya/lamu-dhow-sunset.webp",
+      image: "https://images.unsplash.com/photo-1552832618-fbf88ed7c1cf?w=1200&q=80",
       description: "Sail the Lamu channel at sunset on a traditional dhow with snacks and Swahili music.",
       tours: [
         {
@@ -1214,13 +1214,13 @@ export const kenyanDestinations: Destination[] = [
 {
   id: "k0",
   name: "Watamu, Kenya",
-  image: "/images/kenya/watamu-beach.webp",
-  fallbackImage: "/images/kenya/watamu-coastline.webp",
+  image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
+  fallbackImage: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
   images: [
-    "/images/kenya/watamu-beach.webp",
-    "/images/kenya/watamu-marine-park.webp",
-    "/images/kenya/watamu-dhow-sailing.webp",
-    "/images/kenya/watamu-ruins.webp"
+    "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
+    "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
+    "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
+    "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80"
   ],
   price: 980,
   duration: "5 days",
@@ -1263,7 +1263,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: "k2-a1",
       name: "Watamu Marine Park",
-      image: "/images/kenya/watamu-marine-life.webp",
+      image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
       description: "A vibrant marine reserve with coral reefs, turtles, and tropical fish.",
       tours: [
         {
@@ -1282,7 +1282,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: "k2-a2",
       name: "Gede Ruins",
-      image: "/images/kenya/gede-ruins.webp",
+      image: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80",
       description: "Mysterious ancient Swahili town with a rich historical narrative.",
       tours: [
         {
@@ -1337,13 +1337,13 @@ export const kenyanDestinations: Destination[] = [
 {
   id: "k11",
   name: "Mombasa, Kenya",
-  image: "/images/kenya/mombasa-fort-jesus.webp",
-  fallbackImage: "/images/kenya/mombasa-beach.webp",
+  image: "https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=1200&q=80",
+  fallbackImage: "https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=1200&q=80",
   images: [
-    "/images/kenya/mombasa-fort-jesus.webp",
-    "/images/kenya/mombasa-beach.webp",
-    "/images/kenya/mombasa-old-town.webp",
-    "/images/kenya/mombasa-tamarind-dhow.webp"
+    "https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=1200&q=80",
+    "https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=1200&q=80",
+    "https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=1200&q=80",
+    "https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=1200&q=80"
   ],
   price: 1350,
   duration: "6 days",
@@ -1386,7 +1386,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: "k11-a1",
       name: "Fort Jesus Museum",
-      image: "/images/kenya/fort-jesus-inside.webp",
+      image: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80",
       description: "A 16th-century Portuguese fort with exhibitions on Mombasa\'s rich history.",
       tours: [
         {
@@ -1405,7 +1405,7 @@ export const kenyanDestinations: Destination[] = [
     {
       id: "k11-a2",
       name: "Tamarind Dhow Cruise",
-      image: "/images/kenya/mombasa-dhow.webp",
+      image: "https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=1200&q=80",
       description: "A magical sunset cruise on a traditional dhow with live music and seafood dinner.",
       tours: [
         {

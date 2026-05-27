@@ -1,362 +1,193 @@
 import { Link } from 'wouter';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
-
-interface NavSubItem {
-  name: string;
-  path: string;
-  highlight?: boolean;
-  image?: string;
-}
-
-interface NavColumn {
-  title: string;
-  icon: string;
-  featured?: boolean;
-  items: NavSubItem[];
-}
-
-interface NavDropdown {
-  title: string;
-  description: string;
-  columns: NavColumn[];
-}
-
-interface NavItem {
-  name: string;
-  path: string;
-  dropdown?: NavDropdown;
-}
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, Menu, X, Globe, Phone } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
 
-  const navItems: NavItem[] = [
+  const isHeroPage = location === '/';
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+    setActiveDropdown(null);
+  }, [location]);
+
+  const navLinks = [
     { name: 'Home', path: '/' },
     {
       name: 'Destinations',
       path: '/destinations',
-      dropdown: {
-        title: 'Explore Our World',
-        description: 'Discover breathtaking destinations across the globe',
-        columns: [
-          {
-            title: 'Africa',
-            icon: '🌍',
-            items: [
-              { name: 'Kenya', path: '/destinations/kenya', highlight: true },
-              { name: 'Tanzania', path: '/destinations/tanzania' },
-              { name: 'South Africa', path: '/destinations/south-africa' },
-              { name: 'Zanzibar', path: '/destinations/zanzibar' },
-              { name: 'Egypt', path: '/destinations/egypt' },
-              { name: 'Morocco', path: '/destinations/morocco' },
-            ]
-          },
-          {
-            title: 'Asia',
-            icon: '🗼',
-            items: [
-              { name: 'China', path: '/destinations/china' },
-              { name: 'Japan', path: '/destinations/japan', highlight: true },
-              { name: 'Thailand', path: '/destinations/thailand' },
-              { name: 'Indonesia', path: '/destinations/indonesia' },
-              { name: 'Vietnam', path: '/destinations/vietnam' },
-            ]
-          },
-          {
-            title: 'Middle East',
-            icon: '🕌',
-            items: [
-              { name: 'Dubai', path: '/destinations/dubai', highlight: true },
-              { name: 'Qatar', path: '/destinations/qatar' },
-              { name: 'Turkey', path: '/destinations/turkey' },
-              { name: 'Jordan', path: '/destinations/jordan' },
-            ]
-          },
-          {
-            title: 'Europe',
-            icon: '🏰',
-            items: [
-              { name: 'France', path: '/destinations/france', highlight: true },
-              { name: 'Italy', path: '/destinations/italy' },
-              { name: 'Spain', path: '/destinations/spain' },
-              { name: 'Greece', path: '/destinations/greece' },
-            ]
-          },
-          {
-            title: 'Popular Packages',
-            icon: '⭐',
-            featured: true,
-            items: [
-              { name: 'Safari Adventure', path: '/destinations/kenya' },
-              { name: 'Beach Paradise', path: '/destinations/diani-beach' },
-              { name: 'Cultural Journey', path: '/destinations' },
-            ]
-          }
-        ]
-      }
+      dropdown: [
+        {
+          label: '🌍 Kenya',
+          items: [
+            { name: 'Maasai Mara', path: '/destinations/maasai-mara', badge: 'Popular' },
+            { name: 'Amboseli', path: '/destinations/amboseli' },
+            { name: 'Diani Beach', path: '/destinations/diani-beach' },
+            { name: 'Lake Naivasha', path: '/destinations/lake-naivasha' },
+            { name: 'Mount Kenya', path: '/destinations/mount-kenya' },
+            { name: 'Samburu', path: '/destinations/samburu' },
+            { name: 'Tsavo', path: '/destinations/tsavo' },
+            { name: 'Lamu', path: '/destinations/lamu' },
+            { name: 'Mombasa', path: '/destinations/mombasa' },
+          ]
+        },
+        {
+          label: '🌏 International',
+          items: [
+            { name: 'Bali, Indonesia', path: '/destinations/bali-indonesia', badge: 'Trending' },
+            { name: 'Santorini, Greece', path: '/destinations/santorini' },
+            { name: 'Kyoto, Japan', path: '/destinations/kyoto' },
+            { name: 'Barcelona, Spain', path: '/destinations/barcelona' },
+            { name: 'Swiss Alps', path: '/destinations/swiss-alps' },
+            { name: 'Tanzania', path: '/destinations/tanzania' },
+            { name: 'South Africa', path: '/destinations/south-africa' },
+            { name: 'Sahara Desert', path: '/destinations/sahara-desert' },
+          ]
+        },
+        {
+          label: '🌿 Seasonal',
+          items: [
+            { name: 'Zanzibar', path: '/destinations/zanzibar-tanzania', badge: 'Hot' },
+            { name: 'Northern Lights', path: '/destinations/northern-lights-tromso' },
+            { name: 'Serengeti Migration', path: '/destinations/serengeti-great-migration' },
+            { name: 'Kyoto Cherry Blossom', path: '/destinations/kyoto-cherry-blossom' },
+            { name: 'Himalayas', path: '/destinations/himalayas-snow-leopard' },
+          ]
+        }
+      ]
     },
     {
       name: 'Local Packages',
-      path: '/destinations/kenya',
-      dropdown: {
-        title: 'Kenyan Adventures',
-        description: 'Experience the beauty of Kenya with our curated local packages',
-        columns: [
-          {
-            title: 'Coastal Region',
-            icon: '🏖️',
-            items: [
-              { name: 'Mombasa', path: '/destinations/mombasa', highlight: true },
-              { name: 'Diani', path: '/destinations/diani-beach' },
-              { name: 'Watamu', path: '/destinations/watamu' },
-              { name: 'Malindi', path: '/destinations/malindi' },
-              { name: 'Lamu', path: '/destinations/lamu-island' },
-            ]
-          },
-          {
-            title: 'Bush Region',
-            icon: '🦁',
-            items: [
-              { name: 'Maasai Mara', path: '/destinations/maasai-mara', highlight: true },
-              { name: 'Amboseli', path: '/destinations/amboseli-elephants' },
-              { name: 'Tsavo', path: '/destinations/tsavo-migration' },
-              { name: 'Samburu', path: '/destinations/samburu' },
-            ]
-          },
-          {
-            title: 'Mountain Region',
-            icon: '⛰️',
-            items: [
-              { name: 'Mount Kenya', path: '/destinations/mount-kenya', highlight: true },
-              { name: 'Aberdares', path: '/destinations/aberdare' },
-              { name: 'Lake Naivasha', path: '/destinations/lake-naivasha' },
-            ]
-          },
-          {
-            title: 'Urban Region',
-            icon: '🏙️',
-            items: [
-              { name: 'Nairobi', path: '/destinations/nairobi', highlight: true },
-              { name: 'Nakuru', path: '/destinations/lake-nakuru' },
-              { name: 'Kisumu', path: '/destinations' },
-            ]
-          },
-          {
-            title: 'Special Offers',
-            icon: '🔥',
-            featured: true,
-            items: [
-              { name: 'Weekend Getaways', path: '/destinations/kenya' },
-              { name: 'Honeymoon Special', path: '/destinations/diani-beach' },
-              { name: 'Family Packages', path: '/destinations/kenya' },
-            ]
-          }
-        ]
-      }
+      path: '/destinations',
+      dropdown: [
+        {
+          label: '🏖️ Coast',
+          items: [
+            { name: 'Diani Beach', path: '/destinations/diani-beach', badge: 'Popular' },
+            { name: 'Mombasa', path: '/destinations/mombasa' },
+            { name: 'Watamu', path: '/destinations/watamu' },
+            { name: 'Malindi', path: '/destinations/malindi' },
+            { name: 'Lamu', path: '/destinations/lamu' },
+          ]
+        },
+        {
+          label: '🦁 Safari',
+          items: [
+            { name: 'Maasai Mara', path: '/destinations/maasai-mara', badge: 'Best' },
+            { name: 'Amboseli', path: '/destinations/amboseli' },
+            { name: 'Tsavo', path: '/destinations/tsavo' },
+            { name: 'Samburu', path: '/destinations/samburu' },
+            { name: 'Lewa', path: '/destinations/lewa-wildlife-conservancy' },
+          ]
+        },
+        {
+          label: '⛰️ Highlands',
+          items: [
+            { name: 'Mount Kenya', path: '/destinations/mount-kenya', badge: 'Adventure' },
+            { name: 'Lake Naivasha', path: '/destinations/lake-naivasha' },
+          ]
+        }
+      ]
     },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
 
-  return (
-    <nav className="fixed w-full bg-white/90 backdrop-blur-md shadow-md z-50 border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center group">
-              <img src="/logos/GTT-LOGO.png" alt="Gigantic Tours & Travel Logo" className="h-10 w-auto object-contain mr-2 transition-transform group-hover:scale-105" style={{maxWidth:'48px'}} onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Gigantic Tours & Travel
-              </span>
-            </Link>
-          </div>
+  const forceScrolled = !isHeroPage;
+  const isScrolled = scrolled || forceScrolled;
 
-          <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => (
+  const navbarBg = isScrolled
+    ? 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-100'
+    : 'bg-transparent';
+
+  const textColor = isScrolled ? 'text-gray-700' : 'text-white';
+  const hoverColor = isScrolled ? 'hover:text-blue-600' : 'hover:text-amber-400';
+  const activeColor = isScrolled ? 'text-blue-600' : 'text-amber-400';
+
+  return (
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${navbarBg}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+              <Globe className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <span className={`text-xl font-black tracking-tight transition-colors ${scrolled ? 'text-gray-900' : 'text-white'}`} style={{ fontFamily: 'Poppins, sans-serif' }}>
+                Gigantic Tours
+              </span>
+              <div className={`text-xs font-medium transition-colors ${scrolled ? 'text-blue-600' : 'text-amber-400'}`}>
+                & Travel
+              </div>
+            </div>
+          </Link>
+
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((item) => (
               <div
-                key={item.path}
-                className="relative group"
+                key={item.path + item.name}
+                className="relative"
                 onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
-                onMouseLeave={() => item.dropdown && setActiveDropdown(null)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
                 {item.dropdown ? (
-                  <>
-                    <div
-                      className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 cursor-default ${
-                        location.startsWith(item.path)
-                          ? 'text-blue-600'
-                          : 'text-gray-600 hover:text-blue-500'
-                      }`}
-                    >
-                      {item.name}
-                      <svg
-                        className="ml-1 h-4 w-4 inline transition-transform duration-200 transform group-hover:rotate-180"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-
-                    {activeDropdown === item.name && (
-                      <div
-                        className="absolute left-0 w-screen bg-white shadow-xl border-t border-gray-200 z-50"
-                        style={{ left: '50%', transform: 'translateX(-50%)' }}
-                        onMouseEnter={() => setActiveDropdown(item.name)}
-                        onMouseLeave={() => setActiveDropdown(null)}
-                      >
-                        <div className="max-w-7xl mx-auto px-8 py-6">
-                          <div className="mb-4">
-                            <h3 className="text-2xl font-bold text-gray-900">{item.dropdown.title}</h3>
-                            <p className="text-gray-500">{item.dropdown.description}</p>
-                          </div>
-                          <div className="grid grid-cols-5 gap-8">
-                            {item.dropdown.columns.map((column, colIndex) => (
-                              <div key={colIndex} className={`${column.featured ? 'col-span-2' : ''}`}>
-                                <div className="flex items-center mb-3">
-                                  <span className="text-xl mr-2">{column.icon}</span>
-                                  <h4 className="text-lg font-semibold text-gray-900">{column.title}</h4>
-                                </div>
-                                {column.featured ? (
-                                  <div className="grid grid-cols-3 gap-4">
-                                    {column.items.map((subItem, subIndex) => (
-                                      <Link
-                                        key={subIndex}
-                                        href={subItem.path}
-                                        className="group block rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-                                        onClick={() => setActiveDropdown(null)}
-                                      >
-                                        <div className="h-32 bg-gray-200 relative">
-                                          <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-600 opacity-70"></div>
-                                          <span className="absolute bottom-0 left-0 p-2 text-white font-medium">
-                                            {subItem.name}
-                                          </span>
-                                        </div>
-                                      </Link>
-                                    ))}
-                                  </div>
-                                ) : (
-                                  <ul className="space-y-2">
-                                    {column.items.map((subItem, subIndex) => (
-                                      <li key={subIndex}>
-                                        <Link
-                                          href={subItem.path}
-                                          className={`flex items-center px-2 py-1 text-sm rounded transition-colors ${
-                                            subItem.highlight
-                                              ? 'bg-blue-50 text-blue-600 font-medium'
-                                              : 'text-gray-600 hover:bg-gray-50 hover:text-blue-600'
-                                          }`}
-                                          onClick={() => setActiveDropdown(null)}
-                                        >
-                                          {subItem.name}
-                                          {subItem.highlight && (
-                                            <span className="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">Popular</span>
-                                          )}
-                                        </Link>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                )}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </>
+                  <button className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${textColor} ${hoverColor} hover:bg-white/10`}>
+                    {item.name}
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === item.name ? 'rotate-180' : ''}`} />
+                  </button>
                 ) : (
                   <Link
                     href={item.path}
-                    className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 ${
-                      location === item.path
-                        ? 'text-blue-600'
-                        : 'text-gray-600 hover:text-blue-500'
-                    }`}
+                    className={`flex items-center px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${location === item.path ? activeColor : `${textColor} ${hoverColor}`} hover:bg-white/10`}
                   >
                     {item.name}
                   </Link>
                 )}
-              </div>
-            ))}
-            <button className="ml-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:from-blue-700 hover:to-indigo-700">
-              Book Now
-            </button>
-          </div>
 
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
-              aria-label="Main menu"
-            >
-              {!isOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-white shadow-xl`}>
-        <div className="px-2 pt-2 pb-4 space-y-1">
-          {navItems.map((item) => (
-            <div key={item.path}>
-              {item.dropdown ? (
-                <>
-                  <button
-                    onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
-                    className={`w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium ${
-                      location.startsWith(item.path)
-                        ? 'bg-blue-50 text-blue-600'
-                        : 'text-gray-600 hover:bg-gray-50 hover:text-blue-600'
-                    }`}
-                  >
-                    {item.name}
-                    <svg
-                      className={`h-4 w-4 transition-transform duration-200 ${activeDropdown === item.name ? 'transform rotate-180' : ''}`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
+                <AnimatePresence>
+                  {item.dropdown && activeDropdown === item.name && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-max"
+                      onMouseEnter={() => setActiveDropdown(item.name)}
+                      onMouseLeave={() => setActiveDropdown(null)}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-
-                  {activeDropdown === item.name && (
-                    <div className="pl-4 space-y-3 mt-1">
-                      <div className="border-l-2 border-blue-200 pl-3">
-                        {item.dropdown.columns.slice(0, 4).map((column, colIndex) => (
-                          <div key={colIndex} className="mb-3">
-                            <div className="flex items-center mb-1">
-                              <span className="text-sm mr-1">{column.icon}</span>
-                              <h4 className="text-sm font-medium text-gray-700">{column.title}</h4>
+                      <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 flex gap-8">
+                        {item.dropdown.map((col, ci) => (
+                          <div key={ci} className="min-w-[160px]">
+                            <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">
+                              {col.label}
                             </div>
-                            <ul className="space-y-1 pl-4">
-                              {column.items.slice(0, 3).map((subItem, subIndex) => (
-                                <li key={subIndex}>
+                            <ul className="space-y-1">
+                              {col.items.map((sub, si) => (
+                                <li key={si}>
                                   <Link
-                                    href={subItem.path}
-                                    className={`block px-2 py-1 text-sm rounded transition-colors ${
-                                      subItem.highlight
-                                        ? 'text-blue-600 font-medium'
-                                        : 'text-gray-600 hover:text-blue-500'
-                                    }`}
-                                    onClick={() => {
-                                      setIsOpen(false);
-                                      setActiveDropdown(null);
-                                    }}
+                                    href={sub.path}
+                                    className="flex items-center justify-between gap-3 px-3 py-2 rounded-lg text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-all group"
+                                    onClick={() => setActiveDropdown(null)}
                                   >
-                                    {subItem.name}
+                                    <span className="font-medium group-hover:translate-x-0.5 transition-transform">{sub.name}</span>
+                                    {sub.badge && (
+                                      <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-semibold whitespace-nowrap">
+                                        {sub.badge}
+                                      </span>
+                                    )}
                                   </Link>
                                 </li>
                               ))}
@@ -364,29 +195,97 @@ const Navbar = () => {
                           </div>
                         ))}
                       </div>
-                    </div>
+                    </motion.div>
                   )}
-                </>
-              ) : (
-                <Link
-                  href={item.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
-                    location === item.path
-                      ? 'bg-blue-50 text-blue-600'
-                      : 'text-gray-600 hover:bg-gray-50 hover:text-blue-600'
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              )}
-            </div>
-          ))}
-          <button className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-md shadow hover:shadow-md transition duration-300">
-            Book Now
+                </AnimatePresence>
+              </div>
+            ))}
+
+            <a
+              href="tel:+254742977975"
+              className={`hidden lg:flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors ${textColor} ${hoverColor}`}
+            >
+              <Phone className="w-3.5 h-3.5" />
+              +254 742 977 975
+            </a>
+
+            <Link
+              href="/booking"
+              className="ml-3 px-6 py-2.5 bg-amber-500 hover:bg-amber-400 text-gray-900 font-bold text-sm rounded-full shadow-lg hover:shadow-amber-500/30 transition-all duration-300 hover:scale-105"
+            >
+              Book Now
+            </Link>
+          </div>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`md:hidden p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'}`}
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+          >
+            <div className="px-4 py-4 space-y-1">
+              {navLinks.map((item) => (
+                <div key={item.name}>
+                  {item.dropdown ? (
+                    <div>
+                      <button
+                        onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                        className="w-full flex justify-between items-center px-4 py-3 text-gray-700 font-semibold rounded-xl hover:bg-gray-50"
+                      >
+                        {item.name}
+                        <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === item.name ? 'rotate-180' : ''}`} />
+                      </button>
+                      {activeDropdown === item.name && (
+                        <div className="pl-4 py-2 space-y-1">
+                          {item.dropdown.map((col) =>
+                            col.items.slice(0, 4).map((sub, si) => (
+                              <Link
+                                key={si}
+                                href={sub.path}
+                                className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:text-blue-600 rounded-lg hover:bg-blue-50"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {sub.name}
+                                {sub.badge && <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">{sub.badge}</span>}
+                              </Link>
+                            ))
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.path}
+                      className="block px-4 py-3 text-gray-700 font-semibold rounded-xl hover:bg-gray-50"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
+              ))}
+              <Link
+                href="/booking"
+                className="block mt-3 px-6 py-3 bg-amber-500 text-gray-900 font-bold text-center rounded-full"
+                onClick={() => setIsOpen(false)}
+              >
+                Book Now
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

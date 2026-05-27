@@ -4,11 +4,11 @@ export const seasonalDestinations: Destination[] = [
 {
     id: 's1',
     name: 'Zanzibar, Tanzania',
-    image: '/images/seasonal/zanzibar.webp',
-    fallbackImage: '/images/seasonal/zanzibar2.webp',
+    image: 'https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=1200&q=80',
+    fallbackImage: 'https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=1200&q=80',
     images: [
-      '/images/seasonal/zanzibar.webp',
-      '/images/seasonal/zanzibar2.webp'
+      'https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=1200&q=80',
+      'https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=1200&q=80'
     ],
     price: 1400,
     duration: '6 days',
@@ -44,7 +44,7 @@ export const seasonalDestinations: Destination[] = [
       {
         id: 's1-a1',
         name: 'Stone Town',
-        image: '/images/seasonal/stone-town.webp',
+        image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
         description: 'Historic center of Zanzibar City with unique architecture.',
         tours: [
           {
@@ -82,11 +82,11 @@ export const seasonalDestinations: Destination[] = [
   {
   id: 'season1',
   name: 'Kyoto Cherry Blossom',
-  image: '/images/seasonal/kyoto-cherry-blossom.webp',
-  fallbackImage: '/images/seasonal/kyoto-cherry-blossom2.webp',
+  image: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80',
   images: [
-    '/images/seasonal/kyoto-cherry-blossom.webp',
-    '/images/seasonal/kyoto-cherry-blossom2.webp'
+    'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80',
+    'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80'
   ],
   price: 1500,
   duration: '5 days',
@@ -127,7 +127,7 @@ export const seasonalDestinations: Destination[] = [
     {
       id: 'season1-a1',
       name: 'Maruyama Park',
-      image: '/images/seasonal/maruyama-park.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'Kyoto\'s most famous spot for cherry blossom viewing.',
       tours: [
         {
@@ -165,11 +165,11 @@ export const seasonalDestinations: Destination[] = [
 {
   id: 'season2',
   name: 'Northern Lights in Tromsø',
-  image: '/images/seasonal/northern-lights-tromso.webp',
-  fallbackImage: '/images/seasonal/northern-lights-tromso2.webp',
+  image: 'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=80',
   images: [
-    '/images/seasonal/northern-lights-tromso.webp',
-    '/images/seasonal/northern-lights-tromso2.webp'
+    'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=80',
+    'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=80'
   ],
   price: 1700,
   duration: '5 days',
@@ -211,7 +211,7 @@ export const seasonalDestinations: Destination[] = [
     {
       id: 'season2-a1',
       name: 'Aurora Camp',
-      image: '/images/seasonal/aurora-camp.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'Cozy camp away from city lights perfect for aurora viewing.',
       tours: [
         {
@@ -249,11 +249,11 @@ export const seasonalDestinations: Destination[] = [
 {
   id: 'season3',
   name: 'Serengeti Great Migration',
-  image: '/images/seasonal/serengeti.webp',
-  fallbackImage: '/images/seasonal/serengeti2.webp',
+  image: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1200&q=80',
   images: [
-    '/images/seasonal/serengeti.webp',
-    '/images/seasonal/serengeti2.webp'
+    'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1200&q=80',
+    'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1200&q=80'
   ],
   price: 1800,
   duration: '6 days',
@@ -295,7 +295,7 @@ export const seasonalDestinations: Destination[] = [
     {
       id: 'season3-a1',
       name: 'Mara River Crossing',
-      image: '/images/seasonal/mara-river-crossing.webp',
+      image: 'https://images.unsplash.com/photo-1560981396-7947b2c06e90?w=1200&q=80',
       description: 'Dramatic river crossings where thousands of animals brave the crocodile-infested waters.',
       tours: [
         {
@@ -333,11 +333,11 @@ export const seasonalDestinations: Destination[] = [
 {
   id: 'season4',
   name: 'Snow Leopard Expedition',
-  image: '/images/seasonal/himalayas-snow-leopard.webp',
-  fallbackImage: '/images/seasonal/himalayas-snow-leopard2.webp',
+  image: 'https://images.unsplash.com/photo-1535420841861-5b13f28a9867?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1535420841861-5b13f28a9867?w=1200&q=80',
   images: [
-    '/images/seasonal/himalayas-snow-leopard.webp',
-    '/images/seasonal/himalayas-snow-leopard2.webp'
+    'https://images.unsplash.com/photo-1535420841861-5b13f28a9867?w=1200&q=80',
+    'https://images.unsplash.com/photo-1535420841861-5b13f28a9867?w=1200&q=80'
   ],
   price: 2200,
   duration: '8 days',
@@ -379,7 +379,7 @@ export const seasonalDestinations: Destination[] = [
     {
       id: 'season4-a1',
       name: 'Snow Leopard Habitat',
-      image: '/images/seasonal/snow-leopard-habitat.webp',
+      image: 'https://images.unsplash.com/photo-1535420841861-5b13f28a9867?w=1200&q=80',
       description: 'Remote mountain areas where snow leopards roam.',
       tours: [
         {
@@ -417,11 +417,11 @@ export const seasonalDestinations: Destination[] = [
 {
   id: 'season5',
   name: 'Sahara Desert Festival',
-  image: '/images/seasonal/sahara-festival.webp',
-  fallbackImage: '/images/seasonal/sahara-festival2.webp',
+  image: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=80',
   images: [
-    '/images/seasonal/sahara-festival.webp',
-    '/images/seasonal/sahara-festival2.webp'
+    'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=80',
+    'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=80'
   ],
   price: 1300,
   duration: '4 days',
@@ -463,7 +463,7 @@ export const seasonalDestinations: Destination[] = [
     {
       id: 'season5-a1',
       name: 'Erg Chebbi Dunes',
-      image: '/images/seasonal/erg-chebbi-dunes.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'Towering sand dunes perfect for camel trekking and sunset views.',
       tours: [
         {

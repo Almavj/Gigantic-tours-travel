@@ -4,7 +4,7 @@ export const internationalDestinations: Destination[] = [
 {
     id: 'i1',
     name: 'Bali, Indonesia',
-    image: '/images/bali-1.webp',
+    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80',
     fallbackImage: '/images/international/Bali Indonesia2.webp',
     images: [
       '/images/international/Bali Indonesia.webp',
@@ -45,7 +45,7 @@ export const internationalDestinations: Destination[] = [
       {
         id: 'i1-a1',
         name: 'Uluwatu Temple',
-        image: '/images/international/uluwatu-temple.webp',
+        image: 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1200&q=80',
         description: 'Stunning sea temple perched on a cliff with breathtaking ocean views.',
         tours: [
           {
@@ -83,11 +83,11 @@ export const internationalDestinations: Destination[] = [
   {
   id: 'int2',
   name: 'Santorini',
-  image: '/images/international/santorini.webp',
-  fallbackImage: '/images/international/santorini2.webp',
+  image: 'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1200&q=80',
   images: [
-    '/images/international/santorini.webp',
-    '/images/international/santorini2.webp'
+    'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=1200&q=80',
+    'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1200&q=80'
   ],
   price: 1800,
   duration: '6 days',
@@ -129,7 +129,7 @@ export const internationalDestinations: Destination[] = [
     {
       id: 'int2-a1',
       name: 'Oia Village',
-      image: '/images/international/oia-santorini.webp',
+      image: 'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=1200&q=80',
       description: 'Explore narrow alleys, traditional shops, and the most photographed sunset spot in Greece.',
       tours: [
         {
@@ -168,11 +168,11 @@ export const internationalDestinations: Destination[] = [
 {
   id: 'int3',
   name: 'Kyoto',
-  image: '/images/international/kyoto.webp',
-  fallbackImage: '/images/international/kyoto2.webp',
+  image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1200&q=80',
   images: [
-    '/images/international/kyoto.webp',
-    '/images/international/kyoto2.webp'
+    'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=80',
+    'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1200&q=80'
   ],
   price: 1600,
   duration: '6 days',
@@ -214,7 +214,7 @@ export const internationalDestinations: Destination[] = [
     {
       id: 'int3-a1',
       name: 'Fushimi Inari Taisha',
-      image: '/images/international/fushimi-inari.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'Walk through the iconic red torii gates of Kyoto\'s most famous shrine.',
       tours: [
         {
@@ -252,11 +252,11 @@ export const internationalDestinations: Destination[] = [
 {
   id: 'int4',
   name: 'Barcelona',
-  image: '/images/international/barcelona.webp',
-  fallbackImage: '/images/international/barcelona2.webp',
+  image: 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=1200&q=80',
   images: [
-    '/images/international/barcelona.webp',
-    '/images/international/barcelona.webp'
+    'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=1200&q=80',
+    'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=1200&q=80'
   ],
   price: 1400,
   duration: '5 days',
@@ -298,7 +298,7 @@ export const internationalDestinations: Destination[] = [
     {
       id: 'int4-a1',
       name: 'Sagrada Familia',
-      image: '/images/international/sagrada-familia.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'Marvel at Gaudí\'s unfinished masterpiece, a stunning basilica with intricate facades and interiors.',
       tours: [
         {
@@ -336,11 +336,11 @@ export const internationalDestinations: Destination[] = [
 {
   id: 'int5',
   name: 'Swiss Alps',
-  image: '/images/international/swiss-alps.webp',
-  fallbackImage: '/images/international/swiss-alps2.webp',
+  image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
   images: [
-    '/images/international/swiss-alps.webp',
-    '/images/international/swiss-alps2.webp'
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80'
   ],
   price: 1800,
   duration: '6 days',
@@ -382,7 +382,7 @@ export const internationalDestinations: Destination[] = [
     {
       id: 'int5-a1',
       name: 'Matterhorn Mountain',
-      image: '/images/international/matterhorn.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'Iconic pyramid-shaped peak perfect for skiing and hiking.',
       tours: [
         {
@@ -420,11 +420,11 @@ export const internationalDestinations: Destination[] = [
 {
   id: 'int6',
   name: 'Sahara Desert',
-  image: '/images/international/sahara-desert-main.webp',
-  fallbackImage: '/images/international/sahara-desert-alt.webp',
+  image: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=80',
   images: [
-    '/images/international/sahara-desert.webp',
-    '/images/international/sahara-desert2.webp'
+    'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=80',
+    'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=80'
   ],
   price: 1300,
   duration: '4 days',
@@ -466,7 +466,7 @@ export const internationalDestinations: Destination[] = [
     {
       id: 'int6-a1',
       name: 'Erg Chebbi Dunes',
-      image: '/images/international/erg-chebbi.webp',
+      image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
       description: 'Massive dunes perfect for camel rides and stunning desert photography.',
       tours: [
         {
@@ -504,12 +504,12 @@ export const internationalDestinations: Destination[] = [
 {
   id: 'i2',
   name: 'Tanzania',
-  image: '/images/international/tanzania-safari.webp',
-  fallbackImage: '/images/international/tanzania-zanzibar.webp',
+  image: 'https://images.unsplash.com/photo-1557809558-81a01dad5baf?w=1200&q=80',
+  fallbackImage: 'https://images.unsplash.com/photo-1557809558-81a01dad5baf?w=1200&q=80',
   images: [
-    '/images/international/tanzania-safari.webp',
-    '/images/international/tanzania-zanzibar.webp',
-    '/images/international/tanzania-mount-kilimanjaro.webp'
+    'https://images.unsplash.com/photo-1557809558-81a01dad5baf?w=1200&q=80',
+    'https://images.unsplash.com/photo-1557809558-81a01dad5baf?w=1200&q=80',
+    'https://images.unsplash.com/photo-1557809558-81a01dad5baf?w=1200&q=80'
   ],
   price: 2100,
   duration: '8 days',
@@ -546,7 +546,7 @@ export const internationalDestinations: Destination[] = [
     {
       id: 'i2-a1',
       name: 'Serengeti National Park',
-      image: '/images/international/serengeti.webp',
+      image: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1200&q=80',
       description: 'One of the most famous wildlife reserves in the world, home to the Big Five.',
       tours: [
         {
@@ -588,13 +588,13 @@ export const internationalDestinations: Destination[] = [
 {
   id: "sa1",
   name: "Cape Town, South Africa",
-  image: "/images/international/cape-town-table-mountain.webp",
-  fallbackImage: "/images/international/cape-town-beach.webp",
+  image: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80",
+  fallbackImage: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80",
   images: [
-    "/images/international/cape-town-table-mountain.webp",
-    "/images/international/cape-town-beach.webp",
-    "/images/international/cape-town-waterfront.webp",
-    "/images/international/cape-town-penguins.webp"
+    "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80",
+    "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80",
+    "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80",
+    "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80"
   ],
   price: 1750,
   duration: "7 days",
@@ -638,7 +638,7 @@ export const internationalDestinations: Destination[] = [
     {
       id: "sa1-a1",
       name: "Table Mountain",
-      image: "/images/international/table-mountain.webp",
+      image: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80",
       description: "Iconic flat-topped mountain offering panoramic views of Cape Town.",
       tours: [
         {
@@ -657,7 +657,7 @@ export const internationalDestinations: Destination[] = [
     {
       id: "sa1-a2",
       name: "Boulders Beach Penguins",
-      image: "/images/international/boulders-beach.webp",
+      image: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80",
       description: "Protected beach with a colony of endangered African penguins.",
       tours: [
         {
