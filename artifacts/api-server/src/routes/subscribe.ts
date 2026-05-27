@@ -18,7 +18,7 @@ router.post("/subscribe", async (req: ExpressRequest, res: ExpressResponse) => {
   }
 
   try {
-    const response = await fetch("https://api.resend.com/emails", {
+    const resp: any = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${resendApiKey}`,
@@ -32,8 +32,8 @@ router.post("/subscribe", async (req: ExpressRequest, res: ExpressResponse) => {
       })
     });
 
-    if (!response.ok) {
-      throw new Error(`Resend error: ${await response.text()}`);
+    if (!resp.ok) {
+      throw new Error(`Resend error: ${await resp.text()}`);
     }
 
     res.json({ success: true, message: "Subscribed successfully!" });
