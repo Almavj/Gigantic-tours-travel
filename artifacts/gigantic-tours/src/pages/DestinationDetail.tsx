@@ -45,7 +45,8 @@ const DestinationDetailPage = () => {
       name: destination.name,
       price: String(destination.price),
       image: destination.images[0] || '',
-      location: locationText
+      city: destination.location?.city || destination.name,
+      country: destination.location?.country || 'Kenya'
     }).toString();
     window.location.href = `/booking?${qs}`;
   };
@@ -64,7 +65,7 @@ const DestinationDetailPage = () => {
               <li>
                 <div className="flex items-center">
                   <span className="mx-2 text-gray-400">/</span>
-                  <Link href={`/destinations/${primaryCategory}`} className="text-sm text-gray-700 hover:text-blue-600 capitalize">
+                  <Link href="/destinations" className="text-sm text-gray-700 hover:text-blue-600 capitalize">
                     {primaryCategory}
                   </Link>
                 </div>
@@ -85,7 +86,7 @@ const DestinationDetailPage = () => {
                 src={destination.images[0]}
                 alt={destination.name}
                 className="w-full h-full object-cover"
-                onError={e => { (e.target as HTMLImageElement).src = '/images/hero-fallback.webp'; }}
+                onError={e => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80'; }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent" />
               <div className="absolute bottom-8 left-8 right-8">
@@ -132,7 +133,7 @@ const DestinationDetailPage = () => {
                     {destination.attractions.map(attraction => (
                       <div key={attraction.id} className="border border-gray-200 rounded-lg overflow-hidden">
                         <div className="relative h-48">
-                          <img src={attraction.image} alt={attraction.name} className="w-full h-full object-cover" onError={e => { (e.target as HTMLImageElement).src = '/images/hero-fallback.webp'; }} />
+                          <img src={attraction.image} alt={attraction.name} className="w-full h-full object-cover" onError={e => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80'; }} />
                         </div>
                         <div className="p-6">
                           <h3 className="text-xl font-bold text-gray-900 mb-2">{attraction.name}</h3>
@@ -287,7 +288,7 @@ const DestinationDetailPage = () => {
             <div className="mt-16">
               <div className="flex justify-between items-center mb-8">
                 <h2 className="text-2xl font-bold text-gray-900">You Might Also Like</h2>
-                <Link href={`/destinations/${primaryCategory}`} className="text-blue-600 hover:text-blue-800 font-medium">
+                <Link href="/destinations" className="text-blue-600 hover:text-blue-800 font-medium">
                   View All {destination.category?.[0] || 'Related'} Destinations →
                 </Link>
               </div>

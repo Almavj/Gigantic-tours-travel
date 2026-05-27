@@ -18,10 +18,7 @@ const DealsTicker = () => {
       style={{ background: 'linear-gradient(90deg, #f97316 0%, #ef4444 50%, #f97316 100%)' }}
     >
       <div className="flex items-center">
-        <div
-          className="flex items-center gap-2 px-5 whitespace-nowrap py-2.5 flex-shrink-0"
-          style={{ background: 'rgba(0,0,0,0.25)' }}
-        >
+        <div className="flex items-center gap-2 px-5 whitespace-nowrap py-2.5 flex-shrink-0 bg-black">
           <Zap className="h-4 w-4 fill-white text-white" />
           <span className="font-black text-sm tracking-wide text-white">HOT DEALS</span>
           <Tag className="h-3.5 w-3.5 text-white" />
