@@ -110,12 +110,12 @@ const Navbar = () => {
   const isScrolled = scrolled || forceScrolled;
 
   const navbarBg = isScrolled
-    ? 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-100'
+    ? 'bg-slate-900/98 backdrop-blur-xl shadow-xl border-b border-white/10'
     : 'bg-transparent';
 
-  const textColor = isScrolled ? 'text-gray-700' : 'text-white';
-  const hoverColor = isScrolled ? 'hover:text-blue-600' : 'hover:text-amber-400';
-  const activeColor = isScrolled ? 'text-blue-600' : 'text-amber-400';
+  const textColor = isScrolled ? 'text-white/90' : 'text-white';
+  const hoverColor = isScrolled ? 'hover:text-amber-400' : 'hover:text-amber-400';
+  const activeColor = 'text-amber-400';
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${navbarBg}`}>
@@ -126,10 +126,10 @@ const Navbar = () => {
               <Globe className="w-5 h-5 text-white" />
             </div>
             <div>
-              <span className={`text-xl font-black tracking-tight transition-colors ${isScrolled ? 'text-gray-900' : 'text-white'}`} style={{ fontFamily: 'Poppins, sans-serif' }}>
+              <span className="text-xl font-black tracking-tight text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 Gigantic Tours
               </span>
-              <div className={`text-xs font-medium transition-colors ${isScrolled ? 'text-blue-600' : 'text-amber-400'}`}>
+              <div className="text-xs font-medium text-amber-400">
                 & Travel
               </div>
             </div>
