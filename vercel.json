@@ -1,6 +1,6 @@
 {
-  "buildCommand": "pnpm run build:vercel",
-  "installCommand": "pnpm install",
+  "buildCommand": "echo 'Using pre-built artifacts, skipping build'",
+  "installCommand": "pnpm install --ignore-scripts",
   "outputDirectory": "artifacts/gigantic-tours/dist/public",
   "framework": null,
   "functions": {
