@@ -1,5 +1,21 @@
 {
-  "buildCommand": "pnpm --filter @workspace/gigantic-tours run build",
+  "buildCommand": "pnpm run build:vercel",
   "installCommand": "pnpm install",
-  "outputDirectory": "artifacts/gigantic-tours/dist/public"
+  "outputDirectory": "artifacts/gigantic-tours/dist/public",
+  "framework": null,
+  "functions": {
+    "artifacts/api-server/dist/index.mjs": {
+      "runtime": "nodejs22.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/artifacts/api-server/dist/index.mjs"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/artifacts/gigantic-tours/dist/public/$1"
+    }
+  ]
 }
