@@ -1,6 +1,6 @@
 {
-  "buildCommand": "pnpm run build",
-  "installCommand": "pnpm install --ignore-scripts",
+  "version": 2,
+  "buildCommand": "echo 'No build needed'",
   "outputDirectory": "artifacts/gigantic-tours/dist/public",
   "framework": null
 }

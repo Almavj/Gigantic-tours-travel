@@ -1,6 +1,23 @@
-artifacts/api-server
-artifacts/mockup-sandbox
-scripts
-.migration-backup
-.git
-.replit
+# Ignore all TypeScript source files
+**/*.ts
+!**/*.js
+!**/*.mjs
+!**/*.cjs
+
+# Ignore TypeScript configs
+**/tsconfig.json
+**/tsconfig.*.json
+**/*.tsbuildinfo
+
+# Ignore source directories
+**/src/
+!**/dist/
+
+# Ignore lib directory (since it causes issues)
+lib/
+
+# Keep only necessary files
+!artifacts/**/dist/
+!artifacts/**/package.json
+!package.json
+!pnpm-lock.yaml

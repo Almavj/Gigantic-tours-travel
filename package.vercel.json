@@ -1,0 +1,9 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "echo 'Building for Vercel...' && pnpm -r --if-present run build:vercel"
+  },
+  "private": true
+}
