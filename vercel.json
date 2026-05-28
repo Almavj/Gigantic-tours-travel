@@ -1,21 +1,6 @@
 {
-  "buildCommand": "echo 'Using pre-built artifacts, skipping build'",
+  "buildCommand": "pnpm run build",
   "installCommand": "pnpm install --ignore-scripts",
   "outputDirectory": "artifacts/gigantic-tours/dist/public",
-  "framework": null,
-  "functions": {
-    "artifacts/api-server/dist/index.mjs": {
-      "runtime": "nodejs22.x"
-    }
-  },
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/artifacts/api-server/dist/index.mjs"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/artifacts/gigantic-tours/dist/public/$1"
-    }
-  ]
+  "framework": null
 }

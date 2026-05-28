@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "hello": "tsx ./src/hello.ts",
-    "typecheck": "echo 'Typecheck disabled for Vercel'"
   },
   "devDependencies": {
     "@types/node": "catalog:",
