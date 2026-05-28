@@ -21,7 +21,7 @@ export default function DestinationCard({ destination, showSeasonBadge }: Destin
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-500"
     >
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-52 sm:h-64 overflow-hidden">
         <motion.img
           src={destination.images[0]}
           alt={destination.name}

@@ -26,9 +26,9 @@ const Packages = ({
   if (!packages || !packages.length) return null;
 
   return (
-    <section className={`py-24 ${dark ? 'bg-gray-950' : 'bg-white'}`}>
+    <section className={`py-16 md:py-24 ${dark ? 'bg-gray-950' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-14">
           <div>
             <h2 className={`text-4xl md:text-5xl font-black mb-3 ${dark ? 'text-white' : 'text-gray-900'}`} style={{ fontFamily: 'Poppins, sans-serif' }}>
               {title}
@@ -58,7 +58,7 @@ const Packages = ({
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-48 sm:h-56 overflow-hidden">
                 <img
                   src={pkg.images?.[0] || 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&q=80'}
                   alt={pkg.name}

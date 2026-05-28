@@ -27,7 +27,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-16 md:py-24 overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1920&q=80)' }}

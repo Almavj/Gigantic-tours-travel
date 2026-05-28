@@ -50,7 +50,7 @@ const DestinationsPage = () => {
     <>
       <Navbar />
       <main className="min-h-screen bg-white">
-        <div className="relative h-80 overflow-hidden">
+        <div className="relative h-56 md:h-80 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1920&q=85"
             alt="Destinations"

@@ -73,7 +73,7 @@ export default function Contact() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <div className="relative h-72 overflow-hidden">
+      <div className="relative h-52 md:h-72 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80"
           alt="Contact Us"

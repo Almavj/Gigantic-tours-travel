@@ -60,9 +60,9 @@ const badges = [
 
 export default function TrustBadges() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
             Why Thousands Choose Us
           </h2>

@@ -54,10 +54,10 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-gray-950 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gray-950 relative overflow-hidden">
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 mb-5">
             <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
             <span className="text-amber-400 text-sm font-semibold">4.9/5 from 10,000+ travelers</span>

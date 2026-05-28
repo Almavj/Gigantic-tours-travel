@@ -73,7 +73,7 @@ export default function About() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <div className="relative h-[70vh] min-h-[500px] overflow-hidden">
+      <div className="relative h-[50vh] md:h-[70vh] min-h-[400px] md:min-h-[500px] overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=85"
           alt="About Gigantic Tours"
@@ -140,7 +140,7 @@ export default function About() {
               <img
                 src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=800&q=80"
                 alt="Our story"
-                className="rounded-2xl shadow-2xl w-full h-80 object-cover"
+                className="rounded-2xl shadow-2xl w-full h-56 md:h-80 object-cover"
               />
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 border border-gray-100">
                 <div className="text-3xl font-black text-blue-700">12+</div>
@@ -156,7 +156,7 @@ export default function About() {
               <img
                 src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=800&q=80"
                 alt="Our mission"
-                className="rounded-2xl shadow-2xl w-full h-80 object-cover"
+                className="rounded-2xl shadow-2xl w-full h-56 md:h-80 object-cover"
               />
               <div className="absolute -bottom-6 -right-6 bg-amber-500 rounded-2xl shadow-xl p-5 text-white">
                 <div className="text-3xl font-black">10K+</div>

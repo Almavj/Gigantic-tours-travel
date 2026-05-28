@@ -58,7 +58,7 @@ const Hero = ({ onQuizOpen }: HeroProps) => {
   }, []);
 
   return (
-    <div className="relative h-screen min-h-[700px] overflow-hidden">
+    <div className="relative min-h-[500px] md:min-h-[700px] h-[80vh] md:h-screen overflow-hidden">
       <AnimatePresence mode="sync">
         <motion.div
           key={currentIndex}

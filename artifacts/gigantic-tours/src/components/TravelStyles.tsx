@@ -34,9 +34,9 @@ const styles = [
 
 export default function TravelStyles() {
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-16 md:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
             Find Your Travel Style
           </h2>
@@ -53,7 +53,7 @@ export default function TravelStyles() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative rounded-2xl overflow-hidden aspect-[3/4] cursor-pointer"
+              className="group relative rounded-2xl overflow-hidden aspect-[4/5] sm:aspect-[3/4] cursor-pointer"
             >
               <img
                 src={style.image}

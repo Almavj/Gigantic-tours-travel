@@ -81,7 +81,7 @@ const DestinationDetailPage = () => {
 
           {/* Hero image */}
           <div className="relative bg-gray-100 rounded-xl overflow-hidden mb-12">
-            <div className="relative h-96">
+            <div className="relative h-56 md:h-96">
               <img
                 src={destination.images[0]}
                 alt={destination.name}

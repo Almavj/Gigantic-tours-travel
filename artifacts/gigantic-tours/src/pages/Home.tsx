@@ -77,9 +77,9 @@ const HomePage = () => {
           </div>
         </div>
 
-        <section className="py-24 bg-white">
+        <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-14">
               <div>
                 <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-2 mb-4">
                   <span className="text-amber-600 text-sm font-semibold">✨ Handpicked For You</span>
@@ -118,9 +118,9 @@ const HomePage = () => {
 
         <TravelStyles />
 
-        <section className="py-24 bg-white">
+        <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-14">
+            <div className="text-center mb-10 md:mb-14">
               <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 rounded-full px-4 py-2 mb-4">
                 <span className="text-green-600 text-sm font-semibold">🌿 Seasonal Highlights</span>
               </div>
