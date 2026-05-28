@@ -33,8 +33,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5 group">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
-                <Globe className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 rounded-full overflow-hidden bg-white/10 flex items-center justify-center">
+                <img src="/logos/main.jpg" alt="Gigantic Tours logo" className="w-full h-full object-cover" />
               </div>
               <div>
                 <div className="text-lg font-black" style={{ fontFamily: 'Poppins, sans-serif' }}>Gigantic Tours</div>
@@ -52,7 +52,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                <a href="tel:+254742977975" className="text-gray-400 hover:text-white transition-colors">+254 742 977 975</a>
+                <a href="tel:+254742977975" className="text-gray-400 hover:text-white transition-colors">+254 742977975</a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-amber-400 flex-shrink-0" />

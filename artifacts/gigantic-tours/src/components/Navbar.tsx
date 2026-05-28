@@ -122,8 +122,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-              <Globe className="w-5 h-5 text-white" />
+            <div className="w-10 h-10 rounded-full overflow-hidden bg-white/10 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+              <img src="/logos/main.jpg" alt="Gigantic Tours logo" className="w-full h-full object-cover" />
             </div>
             <div>
               <span className="text-xl font-black tracking-tight text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
