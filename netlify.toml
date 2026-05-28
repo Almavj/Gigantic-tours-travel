@@ -1,0 +1,10 @@
+[build]
+  base = "artifacts/gigantic-tours"
+  # Ensure pnpm is available and build the workspace package for the site
+  command = "corepack enable && corepack prepare pnpm@latest --activate && pnpm install && pnpm --filter @workspace/gigantic-tours run build"
+  publish = "dist/public"
+  environment = { NODE_ENV = "production" }
+
+[context.production.environment]
+  # keep values in Netlify UI or env, this exposes intention
+  NODE_ENV = "production"
